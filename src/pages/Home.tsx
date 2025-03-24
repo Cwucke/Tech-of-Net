@@ -6,9 +6,7 @@ import Text from "../components/Text";
 import Modal from "../components/Modal";
 
 const Home =() =>{
-    const [text, setText] = useState("");
-    const [element, setElement] = useState({title: "яблоко", desc: "фрукт", price:"30$"});
-    const [items, setItems] = useState([element])
+    const [items, setItems] = useState([{title: "Apple", desc: "fruit", price:"30$"}])
     const [isModalOpen, setIsModalOpen] = useState(false);
     return (
             <Container>
@@ -20,7 +18,7 @@ const Home =() =>{
                         ))}
                     </ul>
                     <Button color="primary" size="large" title="Добавить" onClick={() => setIsModalOpen(true)}/>
-                        <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}  title="Добавление нового продукта">{items}</Modal>
+                        <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}  title="Добавление нового продукта" items={items} setItems={setItems}></Modal>
                 </div>
             </Container>
         );
