@@ -1,12 +1,9 @@
 import React, { Component } from "react";
 
-class About extends Component {
-    state = {  } 
-    render() { 
+const About = () => {
         return (<p>
         About us
         </p>);
-    }
 }
  
 export default About;
